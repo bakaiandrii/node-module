@@ -11,7 +11,7 @@ function replaceFileInTwoFolder(firstFolderName = '1800', secondFolderName = '20
     fs.readdir(path.join(process.cwd(), firstFolderName), (err, files) => {
         if (err) throw err;
         else filesOfFirstFolder.push(...files);
-        console.log(filesOfFirstFolder)
+        // console.log(filesOfFirstFolder)
         for (let i = 0; i < filesOfFirstFolder.length; i++) {
             console.log(i);
             fs.rename(path.join(process.cwd(), firstFolderName, filesOfFirstFolder[i]), path.join(process.cwd(), secondFolderName, filesOfFirstFolder[i]), (err) => {
@@ -24,7 +24,7 @@ function replaceFileInTwoFolder(firstFolderName = '1800', secondFolderName = '20
     fs.readdir(path.join(process.cwd(), secondFolderName), (err, files) => {
         if (err) throw err;
         else filesOfSecondFolder.push(...files);
-        console.log(filesOfSecondFolder)
+        // console.log(filesOfSecondFolder)
         for (let i = 0; i < filesOfSecondFolder.length; i++) {
             fs.rename(path.join(process.cwd(), secondFolderName, filesOfSecondFolder[i]), path.join(process.cwd(), firstFolderName, filesOfSecondFolder[i]), (err) => {
                 if (err) throw err;
