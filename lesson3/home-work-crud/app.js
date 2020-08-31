@@ -8,7 +8,7 @@ const carRouter = require('./routers/car.router');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-app.use('/car', carRouter);
+app.use('/cars', carRouter);
 
 
 

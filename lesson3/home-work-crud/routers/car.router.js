@@ -6,7 +6,7 @@ const { checkCarValidityMidlleware } = require('../midllewares');
 module.exports = carRouter;
 
 // create car
-carRouter.post('/new', checkCarValidityMidlleware ,controller.createCar);
+carRouter.post('/', checkCarValidityMidlleware ,controller.createCar);
 // read all cars
 carRouter.get('/', controller.getCars);
 // read  cars by id

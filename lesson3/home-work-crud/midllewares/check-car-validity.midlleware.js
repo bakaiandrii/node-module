@@ -3,13 +3,14 @@ const cars = require('../carArr');
 
 module.exports = (req, res, next) => {
     const car = req.body;
+    const year = new Date().getFullYear();
 
     try {
 
         if (!car.model) {
             throw new Error('No model name')
         }
-        if (!(car.year) || car.year < 1900) {
+        if (!(car.year) || car.year < 1900 || car.year > year) {
             throw new Error('Not valid model year')
         }
         if (!car.custumer) {
