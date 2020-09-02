@@ -3,7 +3,7 @@ let cars = require('../carArr');
 module.exports = {
     createCar: (car) => {
         const carArr = {
-            id: ++cars.length, ...car
+            id: cars[cars.length - 1].id + 1, ...car
         };
         cars.push(carArr)
         return carArr;

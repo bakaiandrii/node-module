@@ -12,6 +12,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
-    "jsonfile": "^6.0.1"
+    "jsonfile": "^6.0.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {
+    "@types/sequelize": "^4.28.9"
   }
 }
