@@ -12,13 +12,7 @@ module.exports = {
     },
     getCarById: async (carId) => {
         const Car = connection.getModels('Car');
-        return Car.findAll({
-            where: {
-                id: {
-                    [Op.eq]: carId
-                }
-            }
-        });
+        return Car.findByPk(carId);
     },
     updateCarModelById: (carId, newModel) => {
         const Car = connection.getModels('Car');
