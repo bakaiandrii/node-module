@@ -16,7 +16,7 @@ module.exports = {
     },
     updateCarModelById: (carId, newModel) => {
         const Car = connection.getModels('Car');
-       return Car.update({model: newModel},{
+        return Car.update({model: newModel}, {
             where: {
                 id: {
                     [Op.eq]: carId

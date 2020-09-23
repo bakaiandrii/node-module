@@ -1,29 +1,29 @@
 module.exports = (sequalize, DataTypes) => {
     const Car = sequalize.define('Car', {
-        id:{
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
-        model:{
+        model: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        price:{
+        price: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        year:{
+        year: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        user_id:{
+        user_id: {
             type: DataTypes.INTEGER,
             foreignKey: true,
         }
 
-    },{
+    }, {
         tableName: 'cars',
         timestamps: false,
     });

@@ -1,4 +1,5 @@
-const {userServise} = require('../services');
+const {emailService, userServise} = require('../services');
+const {WELCOME} = require('../config/email-action.enum');
 const {hashPassword} = require('../helpers');
 
 
@@ -8,6 +9,9 @@ module.exports = {
             const user = req.body;
             user.password = await hashPassword(user.password);
             const newUser = await userServise.createUser(user);
+
+            await emailService.sendMail(user.email, WELCOME, {userName: user.email});
+
             res.status(201).json(newUser);
         } catch (e) {
             res.json(e.message);
@@ -32,7 +36,7 @@ module.exports = {
     },
     updateUserNameById: async (req, res) => {
         const {userId} = req.params;
-        const newName= req.body.model;
+        const newName = req.body.model;
         try {
             const user = await userServise.updateUserNameById(userId, newName);
             res.json(user);

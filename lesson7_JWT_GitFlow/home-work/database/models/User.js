@@ -1,31 +1,31 @@
 module.exports = (sequalize, DataTypes) => {
     const User = sequalize.define('User', {
-        id:{
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull:false,
+            allowNull: false,
         },
-        name:{
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
-            defaultValue:'Dimas'
+            defaultValue: 'Dimas'
         },
         password: {
             type: DataTypes.STRING,
-            allowNull:false,
+            allowNull: false,
         },
-        email:{
+        email: {
             type: DataTypes.STRING,
-            allowNull:false,
-            defaultValue:'Dimas@gmail.com'
+            allowNull: false,
+            defaultValue: 'Dimas@gmail.com'
         },
-        phoneNumber:{
+        phoneNumber: {
             type: DataTypes.STRING,
-            allowNull:false,
+            allowNull: false,
         },
 
-    },{
+    }, {
         tableName: 'users',
         timestamps: false,
     });

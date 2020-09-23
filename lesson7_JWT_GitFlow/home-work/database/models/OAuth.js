@@ -1,9 +1,10 @@
 const path = require('path');
-const {OAUTH} = require('../../config/db-tables.enum');
-const Sequelize = require('sequelize');
 
-module.exports = (sequalize, DataTypes) => {
-    const OAuth = sequalize.define('OAuth', {
+
+const {OAUTH} = require('../../config/db-tables.enum');
+
+module.exports = (sequelize, DataTypes) => {
+    const OAuth = sequelize.define('OAuth', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -22,7 +23,7 @@ module.exports = (sequalize, DataTypes) => {
         },
         created_at: {
             type: DataTypes.STRING,
-            default: new Date().toISOString(),
+            default: new Date().toISOString()
         },
 
     }, {
@@ -30,8 +31,8 @@ module.exports = (sequalize, DataTypes) => {
         timestamps: false,
     });
 
-    const User = require(path.join(process.cwd(), 'database', 'models', 'User'))(sequalize, Sequelize.DataTypes);
-    OAuth.belongsTo(User,{foreignKey:'user_id'});
+    const User = require(path.join(process.cwd(), 'database', 'models', 'User'))(sequelize, DataTypes);
+    OAuth.belongsTo(User, {foreignKey: 'user_id'});
 
     return OAuth;
 };

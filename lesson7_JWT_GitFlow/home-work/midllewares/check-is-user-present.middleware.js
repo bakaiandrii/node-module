@@ -1,13 +1,13 @@
-const { errors, CustomerErrorHandler, statusCodes } = require('../error');
-const { userServise } =require('../services');
+const {errors, CustomerErrorHandler, statusCodes} = require('../error');
+const {userServise} = require('../services');
 
 
 module.exports = async (req, res, next) => {
 
 
     try {
-        const { email } = req.body;
-        const user =  await userServise.findOneByParams({ email });
+        const {email} = req.body;
+        const user = await userServise.findOneByParams({email});
 
         if (!user) {
             return next(new CustomerErrorHandler(

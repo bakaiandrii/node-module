@@ -9,9 +9,9 @@
 //
 // module.exports = connection;
 
-'use strict';
 
-const Sequelize = require('sequelize');
+
+const {Sequelize, DataTypes} = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 
@@ -33,7 +33,7 @@ module.exports = (() => {
             fs.readdir(path.join(process.cwd(), 'database', 'models'), (err, files) => {
                 files.forEach(file => {
                     const [modelName] = file.split('.');
-                    const model = require(path.join(process.cwd(), 'database', 'models', modelName))(client, Sequelize.DataTypes);
+                    const model = require(path.join(process.cwd(), 'database', 'models', modelName))(client, DataTypes);
                     models[modelName] = model;
                 });
             });

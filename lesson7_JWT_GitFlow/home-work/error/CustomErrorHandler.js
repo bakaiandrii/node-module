@@ -1,8 +1,8 @@
-module.exports = class CustomErrorHandler extends Error{
+module.exports = class CustomErrorHandler extends Error {
     constructor(message, status, customCode) {
         super(message);
         this.status = status;
-        this. customCode = customCode;
+        this.customCode = customCode;
 
         Error.captureStackTrace(this, this.constructor);
     }

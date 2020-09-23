@@ -1,6 +1,5 @@
-const { errors, CustomerErrorHandler, statusCodes } = require('../error');
-const { userValidator } = require('../validators');
-
+const {errors, CustomerErrorHandler, statusCodes} = require('../error');
+const {userValidator} = require('../validators');
 
 
 module.exports = (req, res, next) => {

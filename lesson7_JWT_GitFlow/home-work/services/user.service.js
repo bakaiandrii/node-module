@@ -16,7 +16,7 @@ module.exports = {
     },
     updateUserNameById: (id, newName) => {
         const User = connection.getModels('User');
-        return User.update({name: newName},{
+        return User.update({name: newName}, {
             where: {
                 id: {
                     [Op.eq]: id

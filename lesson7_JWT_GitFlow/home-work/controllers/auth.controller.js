@@ -24,6 +24,7 @@ module.exports = {
     },
     refreshToken: async (req, res, next) => {
         try {
+            const user = req.user;
             const token = req.get('Authorization');
             const newTokensPair = tokinizer();
 
@@ -45,8 +46,6 @@ module.exports = {
             const token = req.get('Authorization');
 
             await oAuthService.deleteByParams({access_token: token});
-
-
 
             res.end('logout success');
 

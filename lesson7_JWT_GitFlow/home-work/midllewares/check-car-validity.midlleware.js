@@ -1,4 +1,4 @@
-const { errors, CustomerErrorHandler, statusCodes } = require('../error');
+const {errors, CustomerErrorHandler, statusCodes} = require('../error');
 const {carValidator} = require('../validators');
 
 module.exports = (req, res, next) => {
@@ -8,10 +8,10 @@ module.exports = (req, res, next) => {
         let {error} = carValidator.newCarValidator.validate(car);
 
         if (error) {
-           return next(new CustomerErrorHandler(
-               error.details[0].message,
-               statusCodes.BAD_REQUEST,
-               errors.BAD_REQUEST_NOT_VALID_CAR.code));
+            return next(new CustomerErrorHandler(
+                error.details[0].message,
+                statusCodes.BAD_REQUEST,
+                errors.BAD_REQUEST_NOT_VALID_CAR.code));
         }
 
         next();
