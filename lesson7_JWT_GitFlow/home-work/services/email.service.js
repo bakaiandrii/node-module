@@ -13,8 +13,8 @@ const emailTemplates = new EmailTemplates({
 const transporter = mailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'andriyy11@gmail.com',
-        pass: 'gmGladiator1@'
+        user: '',
+        pass: ''
     }
 });
 
