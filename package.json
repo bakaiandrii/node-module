@@ -11,10 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
     "email-templates": "^7.1.1",
     "email-validator": "^2.0.4",
     "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
     "express-handlebars": "^5.1.0",
+    "fs-extra": "latest",
     "joi": "^17.2.1",
     "jsonfile": "^6.0.1",
     "jsonwebtoken": "^8.5.1",
@@ -22,6 +25,7 @@
     "nodemailer": "^6.4.11",
     "pug": "^3.0.0",
     "sequelize": "^6.3.4",
+    "uuid": "^8.3.0",
     "validate-phone-number-node-js": "0.0.1"
   },
   "devDependencies": {
@@ -30,6 +34,8 @@
     "@types/joi": "^14.3.4",
     "@types/nodemailer": "^6.4.0",
     "@types/email-templates": "^7.1.0",
+    "@types/express-fileupload": "^1.1.5",
+    "@types/fs-extra": "^9.0.1",
     "sequelize-cli": "^6.2.0"
   }
 }

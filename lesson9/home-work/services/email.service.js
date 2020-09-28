@@ -1,5 +1,6 @@
 const mailer = require('nodemailer');
 const EmailTemplates = require('email-templates');
+const config = require('../config/config');
 const path = require('path');
 
 const htmlTemplates = require('../email-templates');
@@ -13,8 +14,8 @@ const emailTemplates = new EmailTemplates({
 const transporter = mailer.createTransport({
     service: 'gmail',
     auth: {
-        user: '',
-        pass: ''
+        user: config.ROOT_EMAIL,
+        pass: config.ROOT_EMAIL_PASSWORD
     }
 });
 
